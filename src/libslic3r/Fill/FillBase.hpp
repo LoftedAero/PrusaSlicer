@@ -88,6 +88,10 @@ struct FillParams
 
     // For infills that produce closed loops to force printing those loops clockwise.
     bool        prefer_clockwise_movements { false };
+
+    // For 2D lattice
+    coordf_t    lattice_angle_1    { 0.f };
+    coordf_t    lattice_angle_2    { 0.f };
 };
 static_assert(IsTriviallyCopyable<FillParams>::value, "FillParams class is not POD (and it should be - see constructor).");
 

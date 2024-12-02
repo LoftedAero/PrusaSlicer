@@ -102,7 +102,7 @@ enum class FuzzySkinType {
 };
 
 enum InfillPattern : int {
-    ipRectilinear, ipMonotonic, ipMonotonicLines, ipAlignedRectilinear, ipGrid, ipTriangles, ipStars, ipCubic, ipLine, ipConcentric, ipHoneycomb, ip3DHoneycomb,
+    ipRectilinear, ipMonotonic, ipMonotonicLines, ipAlignedRectilinear, ipGrid, ip2DLattice, ipTriangles, ipStars, ipCubic, ipLine, ipConcentric, ipHoneycomb, ip3DHoneycomb,
     ipGyroid, ipHilbertCurve, ipArchimedeanChords, ipOctagramSpiral, ipAdaptiveCubic, ipSupportCubic, ipSupportBase,
     ipLightning,
     ipEnsuring,
@@ -706,6 +706,8 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionFloat,                fill_angle))
     ((ConfigOptionPercent,              fill_density))
     ((ConfigOptionEnum<InfillPattern>,  fill_pattern))
+    ((ConfigOptionFloat,                lattice_angle_1))
+    ((ConfigOptionFloat,                lattice_angle_2))
     ((ConfigOptionEnum<FuzzySkinType>,  fuzzy_skin))
     ((ConfigOptionFloat,                fuzzy_skin_thickness))
     ((ConfigOptionFloat,                fuzzy_skin_point_dist))

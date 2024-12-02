@@ -56,6 +56,7 @@ Fill* Fill::new_from_type(const InfillPattern type)
     case ipMonotonicLines:      return new FillMonotonicLines();
     case ipLine:                return new FillLine();
     case ipGrid:                return new FillGrid();
+    case ip2DLattice:           return new Fill2DLattice();
     case ipTriangles:           return new FillTriangles();
     case ipStars:               return new FillStars();
     case ipCubic:               return new FillCubic();

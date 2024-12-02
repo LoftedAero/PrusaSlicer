@@ -817,6 +817,8 @@ bool PrintObject::invalidate_state_by_config_options(
             || opt_key == "infill_extruder"
             || opt_key == "solid_infill_extruder"
             || opt_key == "infill_extrusion_width"
+            || opt_key == "lattice_angle_1"
+            || opt_key == "lattice_angle_2"
             || opt_key == "bridge_angle") {
             steps.emplace_back(posPrepareInfill);
         } else if (
@@ -3129,6 +3131,7 @@ void PrintObject::combine_infill()
                 ((region.config().fill_pattern == ipRectilinear   ||
                   region.config().fill_pattern == ipMonotonic     ||
                   region.config().fill_pattern == ipGrid          ||
+                  region.config().fill_pattern == ip2DLattice     ||
                   region.config().fill_pattern == ipLine          ||
                   region.config().fill_pattern == ipHoneycomb) ? 1.5f : 0.5f) * 
                     layerms.back()->flow(frSolidInfill).scaled_width();

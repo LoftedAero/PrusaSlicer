@@ -356,6 +356,10 @@ void ConfigManipulation::toggle_print_fff_options(DynamicPrintConfig* config)
     toggle_field("scarf_seam_length", uses_scarf_seam);
     toggle_field("scarf_seam_max_segment_length", uses_scarf_seam);
     toggle_field("scarf_seam_on_inner_perimeters", uses_scarf_seam);
+
+    bool lattice_options = config->opt_enum<InfillPattern>("fill_pattern") == InfillPattern::ip2DLattice;
+    for (auto el : { "lattice_angle_1", "lattice_angle_2"})
+        toggle_field(el, lattice_options);
 }
 
 void ConfigManipulation::toggle_print_sla_options(DynamicPrintConfig* config)
